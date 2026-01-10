@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js try</title>
+</head>
+<body>
+  <script>
+      // soal 3
+      function calculateDiscount(cart_items, promo_code = "") {
+          if(promo_code !== "") {
+              total_discount = 0
+              for(let i = 0; i < cart_items.length; i++) {
+                  current = cart_items[i]
+                  discount = 0
+                  if(current[2] >= 100000) {
+                      total = current[1] * current[2]
+                      discount = total * 0.1
+                  }
+                  total_discount += discount
+                  if (total_discount > 1000000) {
+                      total_discount = 1000000
+                  }
+              }
+              return total_discount
+          } else {
+              return 0
+          }
+      }
+
+      //test 1
+      let result3 = calculateDiscount([
+          ["logitech mouse", 2, 80000],
+          ["blutooth speaker", 1, 300000],
+          ["samsung galaxy", 1, 9000000],
+      ], "Test")
+      console.log(result3)
+
+      //test 2
+      let result4 = calculateDiscount([
+          ["mouse", 2, 80000],
+      ])
+      console.log(result4)
+
+
+      function reverseword(kalimat){
+        array = [];
+        letter = "";
+        for (i = 0; i< kalimat.length; i++){
+          letter += kalimat[i];
+          if ( kalimat[i+1] === " " || kalimat[i+1] === undefined){
+            i++;
+            array.push(letter);
+            letter = "";
+          }
+        }
+        let res = "";
+        for (i = array.length-1; i>=0; i--){
+          res += array[i] + " ";
+        }
+       return res
+      }
+
+      
+      console.log(reverseword("do you want me"))
+
+      function reverse(sentence) {
+  arrOfWord = []
+  word = ""
+  for(let i = 0; i < sentence.length; i++) {
+    word += sentence[i]
+    if(sentence[i + 1] === " " || sentence[i + 1] === undefined) {
+      i++
+      arrOfWord.push(word)
+      word = ""
+    }
+  }
+
+  result = ""
+  for(let i = arrOfWord.length - 1; i >= 0; i--) {
+    result += arrOfWord[i] + " "
+  }
+
+  console.log(result)
+}
+
+reverse("Hello World brother negro")
+  </script>
+</body>
+</html>
