@@ -15,3 +15,21 @@ function countLetter(sentence){
 }
 
 console.log(countLetter("Sampoerna"))
+
+
+
+// soal 2
+function count(letter, text) {
+    text = text.toLowerCase()
+    let count = 0
+    for(let i = 0; i < text.length; i++) {
+        if(text[i] == letter) {
+            count++
+        }
+    }
+    return count
+}
+
+//test input
+let result2 = count("o", "HellO World")
+console.log(result2)
